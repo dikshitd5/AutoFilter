@@ -12,40 +12,40 @@ def is_enabled(value, default):
         return default
 
 # Bot information
-SESSION = environ.get('SESSION', 'Media_search')
-API_ID = int(environ.get('API_ID', ''))
-API_HASH = environ.get('API_HASH', '')
-BOT_TOKEN = environ.get('BOT_TOKEN', "")
+SESSION = environ.get('SESSION', 'DRMoviesRobot')
+API_ID = int(environ.get('API_ID', '18164063'))
+API_HASH = environ.get('API_HASH', '8f0efb1a78388537970e6d5fd5a11e70')
+BOT_TOKEN = environ.get('BOT_TOKEN', "6370136326:AAGdeIGAVUBLypqlY45TjesjPGCqjBQv1Jw")
 
 # Bot settings
 CACHE_TIME = int(environ.get('CACHE_TIME', 300))
 USE_CAPTION_FILTER = bool(environ.get('USE_CAPTION_FILTER', True))
 
-PICS = (environ.get('PICS', 'https://te.legra.ph/file/cce1c345a4a752453a3a3.jpg')).split() #SAMPLE PIC
-NOR_IMG = environ.get("NOR_IMG", "https://te.legra.ph/file/a27dc8fe434e6b846b0f8.jpg")
-MELCOW_VID = environ.get("MELCOW_VID", "https://te.legra.ph/file/6f55d902f9bf2d0afd4bb.mp4")
+PICS = (environ.get('PICS', 'https://graph.org/file/de083388ecd6c5c4d6a48.png https://graph.org/file/0ed7350b58c4822b9be22.png https://graph.org/file/0ccf0516530c6696fa2cb.png https://graph.org/file/1c68acdf6db2db512c74f.png')).split() #SAMPLE PIC
+NOR_IMG = environ.get("NOR_IMG", "https://telegra.ph/file/46443096bc6895c74a716.jpg")
+MELCOW_VID = environ.get("MELCOW_VID", "https://telegra.ph/file/451f038b4e7c2ddd10dc0.mp4")
 SPELL_IMG = environ.get("SPELL_IMG", "https://te.legra.ph/file/15c1ad448dfe472a5cbb8.jpg")
 
 # Admins, Channels & Users
-ADMINS = [int(admin) if id_pattern.search(admin) else admin for admin in environ.get('ADMINS', '').split()]
+ADMINS = [int(admin) if id_pattern.search(admin) else admin for admin in environ.get('ADMINS', '5379678669 5681714797').split()]
 CHANNELS = [int(ch) if id_pattern.search(ch) else ch for ch in environ.get('CHANNELS', '').split()]
-auth_users = [int(user) if id_pattern.search(user) else user for user in environ.get('AUTH_USERS', '').split()]
+auth_users = [int(user) if id_pattern.search(user) else user for user in environ.get('AUTH_USERS', '5379678669 5681714797').split()]
 AUTH_USERS = (auth_users + ADMINS) if auth_users else []
 PREMIUM_USER = [int(user) if id_pattern.search(user) else user for user in environ.get('PREMIUM_USER', '').split()]
-auth_channel = environ.get('AUTH_CHANNEL','-1001665499479')
+auth_channel = environ.get('AUTH_CHANNEL','-1001624416132')
 auth_grp = environ.get('AUTH_GROUP')
 AUTH_CHANNEL = int(auth_channel) if auth_channel and id_pattern.search(auth_channel) else None
 AUTH_GROUPS = [int(ch) for ch in auth_grp.split()] if auth_grp else None
-support_chat_id = environ.get('SUPPORT_CHAT_ID', '')
-reqst_channel = environ.get('REQST_CHANNEL_ID', '')
+support_chat_id = environ.get('SUPPORT_CHAT_ID', '-1001831415058')
+reqst_channel = environ.get('REQST_CHANNEL_ID', '-1001915204048')
 REQST_CHANNEL = int(reqst_channel) if reqst_channel and id_pattern.search(reqst_channel) else None
 SUPPORT_CHAT_ID = int(support_chat_id) if support_chat_id and id_pattern.search(support_chat_id) else None
 NO_RESULTS_MSG = bool(environ.get("NO_RESULTS_MSG", False))
 
 # MongoDB information
-DATABASE_URI = environ.get('DATABASE_URI', "")
-DATABASE_NAME = environ.get('DATABASE_NAME', "")
-COLLECTION_NAME = environ.get('COLLECTION_NAME', 'Telegram_files')
+DATABASE_URI = environ.get('DATABASE_URI', "mongodb+srv://dextin:zaxscd123@drmoviesrobot.1nrbuux.mongodb.net/?retryWrites=true&w=majority")
+DATABASE_NAME = environ.get('DATABASE_NAME', "DRMoviesRobot")
+COLLECTION_NAME = environ.get('COLLECTION_NAME', 'DRMoviesRobot')
 
 # Others
 VERIFY = bool(environ.get('VERIFY', False))
